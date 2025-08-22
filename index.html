@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Wallet</title>
-    <style>
-        
-    </style>
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- daisyUI from CDN -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    
 </head>
-<body>
-    <h1>This Is Me</h1>
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
+    <div class="p-5 rounded-lg h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+        <img class="" src="./assets/Group.png" alt="">
+    </div>
+   <form class="p-5 rounded-lg flex flex-col gap-5 bg-white">
+    <div>
+        <label for="" class="m-2 font-semibold">Mobile Number</label><br>
+       <input type="text" placeholder="Mobile Number" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
+    </div>
+    <div>
+        <label for="" class="m-2 font-semibold">4 Digit Pin</label><br>
+       <input type="text" placeholder="Enter 4 Digit Pin" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
+    </div>
+    <button class="btn btn-active btn-primary bg-[#0874F2] hover:bg-[#065b9f] flex justify-center items-center mt-2 !rounded-2xl font-semibold">Login</button>
+   </form>
 
 
     <script src="js/index.js"></script>
