@@ -14,19 +14,21 @@
     <div class="p-5 rounded-lg h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
         <img class="" src="./assets/Group.png" alt="">
     </div>
-   <form class="p-5 rounded-lg flex flex-col gap-5 bg-white">
+   <form id="loginForm" class="p-5 rounded-lg flex flex-col gap-5 bg-white">
     <div>
-        <label for="" class="m-2 font-semibold">Mobile Number</label><br>
-       <input type="text" placeholder="Mobile Number" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
+        <label for="mobile" class="m-2 font-semibold">Mobile Number</label><br>
+       <input type="text" id="mobile" placeholder="Mobile Number" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
     </div>
     <div>
-        <label for="" class="m-2 font-semibold">4 Digit Pin</label><br>
-       <input type="text" placeholder="Enter 4 Digit Pin" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
+        <label id="pinLabel" for="pin" class="m-2 font-semibold">4 Digit Pin</label><br>
+       <input type="text" id="pin" placeholder="Enter 4 Digit Pin" class="input !bg-[#f4f5f7] mt-2 !rounded-2xl" />
     </div>
-    <button class="btn btn-active btn-primary bg-[#0874F2] hover:bg-[#065b9f] flex justify-center items-center mt-2 !rounded-2xl font-semibold">Login</button>
+    <button id="loginBtn" class="btn btn-active btn-primary bg-[#0874F2] hover:bg-[#065b9f] flex justify-center items-center mt-2 !rounded-2xl font-semibold" type="button" onclick="loginFunction()">Login</button>
    </form>
 
-
+<script>
+     
+</script>
     <script src="js/index.js"></script>
 </body>
 </html>
