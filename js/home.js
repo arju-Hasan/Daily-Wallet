@@ -1,6 +1,10 @@
 // Add Money Section
 document.getElementById("addMoneyBtn").addEventListener("click", function(e) {
    e.preventDefault();
+    // card border color change
+    // document.getElementById("Cardaddmoneybtn").classList.remove("border-gray-400");
+    // document.getElementById("Cardaddmoneybtn").classList.add("border-green-400");
+
  // validate form inputs
  const billerBank = document.getElementById("billerBank").value;
  const accountNumber = document.getElementById("accountNumber").value;
@@ -142,6 +146,13 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
   document.getElementById("payBillPin").value = "";
 });
 
+// Transactions ‍section
+document.getElementById("CardtransactionBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    
+});
+
 // Toggle section
 document
   .getElementById("Cardaddmoneybtn")
@@ -151,6 +162,7 @@ document
     document.getElementById("transferSection").style.display = "none";
     document.getElementById("bonusSection").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
+    document.getElementById("transactionSection").style.display = "none";
   });
 document
   .getElementById("CardcashoutBtn")
@@ -160,6 +172,7 @@ document
     document.getElementById("transferSection").style.display = "none";
     document.getElementById("bonusSection").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
+    document.getElementById("transactionSection").style.display = "none";
   });
   document
     .getElementById("CardtransferBtn")
@@ -169,6 +182,7 @@ document
       document.getElementById("cashOutSection").style.display = "none";
       document.getElementById("bonusSection").style.display = "none";
       document.getElementById("payBillSection").style.display = "none";
+      document.getElementById("transactionSection").style.display = "none";
     });
     document
       .getElementById("CardbonusBtn")
@@ -178,8 +192,9 @@ document
         document.getElementById("transferSection").style.display = "none";
         document.getElementById("cashOutSection").style.display = "none";
         document.getElementById("payBillSection").style.display = "none";
+        document.getElementById("transactionSection").style.display = "none";
       });
-// Pay Bill Section
+
     document
     .getElementById("CardpayBillBtn")
     .addEventListener("click", function () {
@@ -188,7 +203,21 @@ document
         document.getElementById("transferSection").style.display = "none";
         document.getElementById("cashOutSection").style.display = "none";
         document.getElementById("bonusSection").style.display = "none";
-});
+        document.getElementById("transactionSection").style.display = "none";
+    });
+
+    document
+      .getElementById("CardtransactionBtn")
+      .addEventListener("click", function () {
+        document.getElementById("transactionSection").style.display = "block";
+        document.getElementById("payBillSection").style.display = "none";
+        document.getElementById("addMoneySection").style.display = "none";
+        document.getElementById("transferSection").style.display = "none";
+        document.getElementById("cashOutSection").style.display = "none";
+        document.getElementById("bonusSection").style.display = "none";
+      });
+
+    
 
 // logout section
 function logout() {
@@ -196,4 +225,25 @@ function logout() {
   localStorage.removeItem("userSession");
   // Redirect to login page
   window.location.href = "./index.html";
-}
+};
+
+
+//  card selector color
+
+const cards = document.querySelectorAll(
+  "#Cardaddmoneybtn, #CardcashoutBtn, #CardtransferBtn, #CardbonusBtn, #CardpayBillBtn, #CardtransactionBtn"
+);
+
+cards.forEach(card => {
+  card.addEventListener("click", function () {
+    cards.forEach(c => {
+
+      c.classList.remove("border-green-400");
+      c.classList.add("border-gray-400");
+    });
+
+    this.classList.remove("border-gray-400");
+    this.classList.add("border-green-400");
+  });
+});
+
