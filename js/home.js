@@ -2,12 +2,12 @@
 document.getElementById("addMoneyBtn").addEventListener("click", function(e) {
    e.preventDefault();
  // validate form inputs
- const bank = document.getElementById("bank").value;
+ const billerBank = document.getElementById("billerBank").value;
  const accountNumber = document.getElementById("accountNumber").value;
  const amount = parseInt(document.getElementById("addAmount").value);
  const pin = document.getElementById("pin").value;
  const AvailableBalance = parseInt(document.getElementById("AvailableBalance").innerText);
-  if (bank === "Select bank") {
+  if (billerBank === "Select bank") {
      alert("Please select a bank.");
      return;
  }
@@ -107,6 +107,39 @@ document.getElementById("bonusBtn").addEventListener("click", function (e) {
   console.log({ coupon, AvailableBalance, newBalance });
   // reset the input bonus box
   document.getElementById("bonusCoupon").value = "";
+});
+
+//pay bill section
+document.getElementById("payBillBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  // validate form inputs
+  const BillerAccountNumber = document.getElementById("BillerAccountNumber").value;
+  const amount = parseInt(document.getElementById("payBillAmount").value);
+  const pin = document.getElementById("payBillPin").value;
+  const AvailableBalance = parseInt(document.getElementById("AvailableBalance").innerText);
+  if (bank === "Select option") {
+     alert("Please select a Biller Opthion.");
+     return;
+  }
+  if (BillerAccountNumber.length !== 11) {
+    alert("Please enter a valid biller account number.");
+    return;
+  }
+  if (amount === "" || isNaN(amount)) {
+    alert("Please enter a valid amount.");
+    return;
+  }
+  if (pin.length !== 4) {
+    alert("Please enter a valid 4-digit PIN.");
+    return;
+  }
+  const newBalance = AvailableBalance - amount;
+  document.getElementById("AvailableBalance").innerText = newBalance;
+  console.log({ BillerAccountNumber, amount, pin, AvailableBalance, newBalance });
+  // reset the input pay bill box
+  document.getElementById("BillerAccountNumber").value = "";
+  document.getElementById("payBillAmount").value = "";
+  document.getElementById("payBillPin").value = "";
 });
 
 // Toggle section
