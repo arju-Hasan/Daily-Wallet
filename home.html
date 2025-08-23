@@ -35,12 +35,12 @@
         />
         <div>
           <h2 class="font-bold">$ <span id="AvailableBalance">4500</span></h2>
-          <p class="text-[#08080880]">Available Balance</p>
+          <p class="text-gray-400">Available Balance</p>
         </div>
       </div>
       <div>
         <button class="btn btn-outline !m-0"><i class="fa-solid fa-arrow-right-from-bracket"> </i> Log Out</button>
-        <!-- <button class="p-4 text-[#08080880] button" href="./index.html" onclick="logout()">
+        <!-- <button class="p-4 text-gray-400 button" href="./index.html" onclick="logout()">
           <i class="fa-solid fa-arrow-right-from-bracket mr-[5px]"> </i> Log out
         </button> -->
       </div>
@@ -48,7 +48,7 @@
     <!-- Welcome section -->
     <section class="max-w-lg mx-auto mt-8 pl-2 pr-2 text-center">
       <h2 class="text-2xl font-bold">🔥 Welcome to Payooo!</h2>
-      <p class="text-[#08080880]">
+      <p class="text-gray-400">
         Enjoy easy and convenient financial services with us. Cashout charge is
         low and transparent.
       </p>
@@ -59,35 +59,35 @@
      >
       <div id="Cardaddmoneybtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/wallet1.png" alt="" />
-        <p class="text-center text-[#08080880]">Add money</p>
+        <p class="text-center text-gray-400">Add money</p>
       </div>
       <div id="CardcashoutBtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/send1.png" alt="" />
-        <p class="text-center text-[#08080880]">Cashout</p>
+        <p class="text-center text-gray-400">Cashout</p>
       </div>
       <div id="CardtransferBtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/money1.png" alt="" />
-        <p class="text-center text-[#08080880]">Transfer Money</p>
+        <p class="text-center text-gray-400">Transfer Money</p>
       </div>
       <div id="CardbonusBtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/bonus1.png" alt="" />
-        <p class="text-center text-[#08080880]">Get Bonusy</p>
+        <p class="text-center text-gray-400">Get Bonusy</p>
       </div>
       <div id="CardpayBillBtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/purse1.png" alt="" />
-        <p class="text-center text-[#08080880]">Pay Bill</p>
+        <p class="text-center text-gray-400">Pay Bill</p>
       </div>
       <div id="CardtransactionBtn" class=" pt-6 pb-6 text-center rounded-xl border-2 border-gray-400">
         <img class="mx-auto" src="./assets/transaction1.png" alt="" />
-        <p class="text-center text-[#08080880]">Transactions</p>
+        <p class="text-center text-gray-400">Transactions</p>
       </div>
     </section>
     <!-- add money section -->
-    <section class="max-w-lg mx-auto mt-3" id="addMoneySection">
+    <section class="max-w-lg mx-auto mt-1.5 mb-1.5" id="addMoneySection">
       <h1 class="text-2xl font-bold">Add Money</h1>
       <form action="" class="p-5 rounded-lg bg-white">
         <div class="mb-3">
-          <label for="mobile" class="m-2 font-semibold">Select A Bank</label
+          <label for="mobile" class="mb-2 font-semibold">Select A Bank</label
           ><br />
           <select
             id="bank"
@@ -325,7 +325,10 @@
 
     <!-- Transactions Section -->
     <section class="max-w-lg mx-auto mt-3" style="display: none;" id="transactionSection">
-      <h1 class="text-2xl font-bold mb-3">Transaction History</h1>
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-3">Transaction History</h1>
+        <p class="text-gray-400 cursor-pointer" href="#">view all</p>
+      </div>
       <p class="text-gray-600 text-center !font-semibold !mt-17"><span class="loading loading-infinity loading-xl"></span><br> coming soon.......</p>
     </section>
 

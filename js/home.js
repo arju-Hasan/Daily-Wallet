@@ -1,3 +1,5 @@
+const transactiondata = [];
+
 // Add Money Section
 document.getElementById("addMoneyBtn").addEventListener("click", function(e) {
    e.preventDefault();
@@ -29,7 +31,13 @@ document.getElementById("addMoneyBtn").addEventListener("click", function(e) {
  }
  const newBalance = AvailableBalance + amount;
  document.getElementById("AvailableBalance").innerText = newBalance;
-console.log({ bank, accountNumber, amount, pin, AvailableBalance, newBalance });
+
+const data ={
+  name: "Add Money",
+  Date: new Date().toLocaleDateString(),
+}
+transactiondata.push(data);
+
 // reset the input addmony box
 document.getElementById("bank").value = "Select bank";
 document.getElementById("accountNumber").value = "";
@@ -60,7 +68,13 @@ document.getElementById("cashoutBtn").addEventListener("click", function (e) {
   }
   const newBalance = AvailableBalance - amount;
   document.getElementById("AvailableBalance").innerText = newBalance;
-  console.log({ agentNumber, amount, pin, AvailableBalance, newBalance });
+ 
+  const data = {
+    name: "Cash Out",
+    Date: new Date().toLocaleDateString(),
+  };
+  transactiondata.push(data);
+
   // reset the input cashout box
   document.getElementById("CashoutAgentNumber").value = "";
   document.getElementById("CashoutAmount").value = "";
@@ -89,7 +103,13 @@ document.getElementById("transferBtn").addEventListener("click", function (e) {
   }
   const newBalance = AvailableBalance - amount;
   document.getElementById("AvailableBalance").innerText = newBalance;
-  console.log({ mobileNumber, amount, pin, AvailableBalance, newBalance });
+
+  const data = {
+    name: "Transfer Money",
+    Date: new Date().toLocaleDateString(),
+  };
+  transactiondata.push(data);
+
   // reset the input transfer box
   document.getElementById("transferAccountNumber").value = "";
   document.getElementById("transferAmount").value = "";
@@ -108,7 +128,13 @@ document.getElementById("bonusBtn").addEventListener("click", function (e) {
   }
   const newBalance = AvailableBalance + 100; // Assuming a fixed bonus amount
   document.getElementById("AvailableBalance").innerText = newBalance;
-  console.log({ coupon, AvailableBalance, newBalance });
+  
+  const data = {
+    name: "Get Bonus",
+    Date: new Date().toLocaleDateString(),
+  };
+  transactiondata.push(data);
+
   // reset the input bonus box
   document.getElementById("bonusCoupon").value = "";
 });
@@ -139,7 +165,13 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
   }
   const newBalance = AvailableBalance - amount;
   document.getElementById("AvailableBalance").innerText = newBalance;
-  console.log({ BillerAccountNumber, amount, pin, AvailableBalance, newBalance });
+
+  const data = {
+    name: "Pay Bill",
+    Date: new Date().toLocaleDateString(),
+  };
+  transactiondata.push(data);
+
   // reset the input pay bill box
   document.getElementById("BillerAccountNumber").value = "";
   document.getElementById("payBillAmount").value = "";
@@ -217,6 +249,35 @@ document
         document.getElementById("bonusSection").style.display = "none";
       });
 
+//// Toggle section short version
+//       // সব card এবং section mapping
+// const cardSectionMap = {
+//   Cardaddmoneybtn: "addMoneySection",
+//   CardcashoutBtn: "cashOutSection",
+//   CardtransferBtn: "transferSection",
+//   CardbonusBtn: "bonusSection",
+//   CardpayBillBtn: "payBillSection",
+//   CardtransactionBtn: "transactionSection",
+// };
+// 
+// // সব section ids array আকারে বের করলাম
+// const allSections = Object.values(cardSectionMap);
+// 
+// // loop চালালাম সব card এর জন্য
+// Object.keys(cardSectionMap).forEach(cardId => {
+//   document.getElementById(cardId).addEventListener("click", function () {
+//     const targetSection = cardSectionMap[cardId];
+// 
+//     // সব section hide করে দিচ্ছি
+//     allSections.forEach(secId => {
+//       document.getElementById(secId).style.display = "none";
+//     });
+// 
+//     // শুধু ক্লিক করা card এর section দেখাচ্ছি
+//     document.getElementById(targetSection).style.display = "block";
+//   });
+// });
+
     
 
 // logout section
@@ -229,21 +290,41 @@ function logout() {
 
 
 //  card selector color
-
 const cards = document.querySelectorAll(
   "#Cardaddmoneybtn, #CardcashoutBtn, #CardtransferBtn, #CardbonusBtn, #CardpayBillBtn, #CardtransactionBtn"
 );
 
-cards.forEach(card => {
+cards.forEach((card) => {
   card.addEventListener("click", function () {
-    cards.forEach(c => {
-
-      c.classList.remove("border-green-400");
-      c.classList.add("border-gray-400");
+    // সব কার্ডকে inactive বানাও
+    cards.forEach((c) => {
+      c.classList.remove("text-blue-400", "border-green-400");
+      c.classList.add("text-gray-400", "border-gray-400");
     });
 
-    this.classList.remove("border-gray-400");
-    this.classList.add("border-green-400");
+    // শুধু ক্লিক করা কার্ডকে active বানাও
+    this.classList.remove("text-gray-400", "border-gray-400");
+    this.classList.add("text-blue-400", "border-green-400");
   });
 });
+
+
+// const cards = document.querySelectorAll(
+//   "#Cardaddmoneybtn, #CardcashoutBtn, #CardtransferBtn, #CardbonusBtn, #CardpayBillBtn, #CardtransactionBtn"
+// );
+// 
+// cards.forEach(card => {
+//   card.addEventListener("click", function () {
+//     cards.forEach(c => {
+//       c.classList.remove("!text-gray-400");
+//       c.classList.add("!text-blue-400");
+//       c.classList.remove("border-green-400");
+//       c.classList.add("border-gray-400");
+//     });
+//     this.classList.remove("!text-gray-400");
+//     this.classList.add("!text-blue-400");
+//     this.classList.remove("border-gray-400");
+//     this.classList.add("border-green-400");
+//   });
+// });
 
