@@ -22,10 +22,10 @@
     <!-- custom css -->
     <link rel="stylesheet" href="./style/home.css" />
   </head>
-  <body class="bg-[#f4f5f7] h-[100vh]">
+  <body class="bg-[#f4f5f7] min-h-[100vh]">
     <!-- Navbar -->
     <nav
-      class="flex justify-between items-center p-1 bg-white shadow max-w-lg mx-auto border-b-1 border-gray-400 p-6"
+      class="flex justify-between items-center p-1 bg-white shadow max-w-lg mx-auto border-b-0 border-gray-400 p-6"
      >
       <div class="flex items-center gap-5">
         <img
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div>
-        <button class="btn btn-outline !m-0"><i class="fa-solid fa-arrow-right-from-bracket"> </i> Log Out</button>
+        <button class="btn btn-outline !m-.5"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
         <!-- <button class="p-4 text-gray-400 button" href="./index.html" onclick="logout()">
           <i class="fa-solid fa-arrow-right-from-bracket mr-[5px]"> </i> Log out
         </button> -->
@@ -190,7 +190,7 @@
     </section>
     <!-- Transfer Money -->
      <section class="max-w-lg mx-auto mt-3" style="display: none;" id="transferSection">
-      <h1 class="text-2xl font-bold">Transfer Money</h1>
+      <h1 class="text-2xl font-bold">Transfer-Money</h1>
       <form action="" class="p-5 rounded-lg bg-white">
         <div>
           <label for="mobile" class="m-2 font-semibold"
@@ -234,7 +234,6 @@
         </button>
       </form>
     </section>
-
     <!-- Get Bonus -->
      <section class="max-w-lg mx-auto mt-3" style="display: none;" id="bonusSection">
         <h1 class="text-2xl font-bold mb-3">Get Bonus</h1>
@@ -258,8 +257,11 @@
          Get Bonus
         </button>
         </form>
+        <div>
+          <img class="mt-10" src="./assets/Bonus-Gift-Card.png" alt="">
+          <p class="text-black-600 text-center !font-semibold !mt-3 !pb-17">Your Coupon Code: RAJU</p>
+        </div>
      </section>
-
      <!-- Pay Bill Section -->
      <section class="max-w-lg mx-auto mt-3" style="display: none;" id="payBillSection">
       <h1 class="text-2xl font-bold">Pay Bill</h1>
@@ -322,7 +324,6 @@
         </button>
       </form>
     </section>
-
     <!-- Transactions Section -->
     <section class="max-w-lg mx-auto mt-3" style="display: none;" id="transactionSection">
       <div class="flex justify-between items-center">
@@ -342,7 +343,7 @@
         <div>
          <i class="fa-solid fa-ellipsis-vertical"></i>
       </div>
-    </div>
+     </div>
     </section>
 
     <script src="./js/home.js"></script>
