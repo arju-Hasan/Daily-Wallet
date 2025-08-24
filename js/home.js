@@ -181,9 +181,28 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
 // Transactions ‍section
 document.getElementById("CardtransactionBtn").addEventListener("click", function (e) {
     e.preventDefault();
+    const transactionSection = document.getElementById("transactionSection");
+    transactionSection.innerHTML = ""; // Clear previous transactions
+    for( data of transactiondata){
+      const div = document.createElement("div");
+      div.innerHTML = `
+      <div class="bg-white p-3 rounded-2xl m-3 flex justify-between items-center">
+        <div class="flex items-center">
+          <div class="p-3 rounded-full bg-[#f4f5f7]">
+            <img src="./assets/wallet1.png" class="mx-auto" alt="">
+          </div>
+          <div class="ml-3">
+            <h1>${data.name}</h1>
+            <p>${data.Date}</p>
+          </div>
+        </div>
+        <div>
+         <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>`;
+      transactionSection.appendChild(div);
+    }
+  });
 
-    
-});
 
 // Toggle section
 document
