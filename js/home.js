@@ -21,7 +21,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function(e) {
      alert("Please enter a valid 11-digit account number.");
      return;
  }
- if (amount === "" || isNaN(amount)) {
+ if (amount <= 0 || isNaN(amount)) {
      alert("Please enter a valid amount.");
      return;
  }
@@ -58,7 +58,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function (e) {
     alert("Please enter a valid 11-digit agent number.");
     return;
   }
-  if (amount === "" || isNaN(amount)) {
+  if (amount <= 0 || AvailableBalance < amount || isNaN(amount)) {
     alert("Please enter a valid amount.");
     return;
   }
@@ -93,7 +93,7 @@ document.getElementById("transferBtn").addEventListener("click", function (e) {
     alert("Please enter a valid 11-digit mobile number.");
     return;
   }
-  if (amount === "" || isNaN(amount)) {
+  if (amount <= 0 || AvailableBalance < amount || isNaN(amount)) {
     alert("Please enter a valid amount.");
     return;
   }
@@ -155,7 +155,7 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
     alert("Please enter a valid biller account number.");
     return;
   }
-  if (amount === "" || isNaN(amount)) {
+  if (amount <= 0 || AvailableBalance < amount || isNaN(amount)) {
     alert("Please enter a valid amount.");
     return;
   }
