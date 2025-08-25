@@ -181,9 +181,9 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
 // Transactions ‍section
 document.getElementById("CardtransactionBtn").addEventListener("click", function (e) {
     e.preventDefault();
-    const transactionSection = document.getElementById("transactionSection");
+    const transactionSection = document.getElementById("newTransaction");
     transactionSection.innerHTML = ""; // Clear previous transactions
-    for( data of transactiondata){
+    for (data of transactiondata) {
       const div = document.createElement("div");
       div.innerHTML = `
       <div class="bg-white p-3 rounded-2xl m-3 flex justify-between items-center">
@@ -199,6 +199,7 @@ document.getElementById("CardtransactionBtn").addEventListener("click", function
         <div>
          <i class="fa-solid fa-ellipsis-vertical"></i>
       </div>`;
+     
       transactionSection.appendChild(div);
     }
   });
