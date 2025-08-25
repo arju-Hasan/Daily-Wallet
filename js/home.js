@@ -179,13 +179,30 @@ document.getElementById("payBillBtn").addEventListener("click", function (e) {
 });
 
 // Transactions ‍section
-document.getElementById("CardtransactionBtn").addEventListener("click", function (e) {
+document
+  .getElementById("CardtransactionBtn")
+  .addEventListener("click", function (e) {
     e.preventDefault();
-    const transactionSection = document.getElementById("newTransaction");
-    transactionSection.innerHTML = ""; // Clear previous transactions
-    for (data of transactiondata) {
-      const div = document.createElement("div");
-      div.innerHTML = `
+
+    const list = document.getElementById("newTransaction");
+    const empty = document.getElementById("transactionHistoryNotAvailable");
+
+    list.innerHTML = ""; // আগেরগুলো মুছো
+    const items = Array.isArray(transactiondata) ? transactiondata : [];
+
+    if (items.length === 0) {
+      // ডাটা নেই → empty দেখাও
+      empty.style.display = "block";
+      list.style.display = "none";
+      return;
+    }
+
+    empty.style.display = "none"; // ডাটা আছে → empty লুকাও
+    list.style.display = "block";
+
+    for (const data of items) {
+      const card = document.createElement("div");
+      card.innerHTML = `
       <div class="bg-white p-3 rounded-2xl m-3 flex justify-between items-center">
         <div class="flex items-center">
           <div class="p-3 rounded-full bg-[#f4f5f7]">
@@ -197,12 +214,41 @@ document.getElementById("CardtransactionBtn").addEventListener("click", function
           </div>
         </div>
         <div>
-         <i class="fa-solid fa-ellipsis-vertical"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
       </div>`;
-     
-      transactionSection.appendChild(div);
+      list.appendChild(card.firstElementChild); // কার্ডটা যোগ করো
     }
   });
+
+// document.getElementById("CardtransactionBtn").addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const transactionSection = document.getElementById("newTransaction");
+//   const noHistoryMsg = document.getElementById(
+//     "transactionHistoryNotAvailable"
+//   );
+//   transactionSection.innerHTML = ""; // Clear previous transactions
+//   noHistoryMsg.style.display = "none"; // hide "no history" msg
+//   for (data of transactiondata) {
+//     const div = document.createElement("div");
+//     div.innerHTML = `
+//       <div class="bg-white p-3 rounded-2xl m-3 flex justify-between items-center">
+//         <div class="flex items-center">
+//           <div class="p-3 rounded-full bg-[#f4f5f7]">
+//             <img src="./assets/wallet1.png" class="mx-auto" alt="">
+//           </div>
+//           <div class="ml-3">
+//             <h1>${data.name}</h1>
+//             <p>${data.Date}</p>
+//           </div>
+//         </div>
+//         <div>
+//          <i class="fa-solid fa-ellipsis-vertical"></i>
+//       </div>`;
+// 
+//     transactionSection.appendChild(div);
+//   }
+// });
 
 
 // Toggle section
